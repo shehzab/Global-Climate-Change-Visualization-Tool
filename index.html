@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global-Climate-Change-Visualizer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Global Climate Change Visualization</h1>
+        <div id="chart-container">
+            <canvas id="climateChart"></canvas>
+        </div>
+        <div id="year-display">Year: 1880</div>
+        <div class="controls">
+            <button id="play-pause">Play</button>
+            <button id="reset">Reset</button>
+            <select id="season-select">
+                <option value="annual">Annual</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="autumn">Autumn</option>
+                <option value="winter">Winter</option>
+            </select>
+            <button id="export-btn">Export Data (CSV)</button>
+        </div>
+        <div id="dataset-toggles">
+            <label class="dataset-toggle">
+                <input type="checkbox" id="temp-toggle" checked> Temperature
+            </label>
+            <label class="dataset-toggle">
+                <input type="checkbox" id="co2-toggle" checked> CO2 Levels
+            </label>
+        </div>
+        <div class="info-panel">
+            <h3>About This Visualization</h3>
+            <p>This interactive chart shows global temperature anomalies and CO2 levels from 1880 to 2024. The temperature baseline is set to the average from 1951-1980. Toggle between datasets and seasons to explore different aspects of climate change.</p>
+            <p>Data source: Simulated data based on trends from NASA GISS and NOAA</p>
+        </div>
+        <div class="comparison-tool">
+            <h2>Data Comparison Tool</h2>
+            <div class="year-inputs">
+                <div class="year-input">
+                    <label for="year1">Year 1:</label>
+                    <input type="number" id="year1" min="1880" max="2024" value="1880">
+                </div>
+                <div class="year-input">
+                    <label for="year2">Year 2:</label>
+                    <input type="number" id="year2" min="1880" max="2024" value="2024">
+                </div>
+            </div>
+            <button id="compare-btn">Compare Data</button>
+            <div id="comparison-result"></div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
